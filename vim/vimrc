@@ -10,7 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go', { 'for': 'go'}
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nvim-lua/popup.nvim'
 Plugin 'nvim-lua/plenary.nvim'
@@ -25,6 +25,7 @@ Plugin 'jparise/vim-graphql'
 Plugin 'jameshuynh/auto-save.nvim'
 Plugin 'avakhov/vim-yaml'
 Plugin 'pangloss/vim-javascript'
+Plugin 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 call vundle#end()
 filetype plugin indent on
 
@@ -176,6 +177,3 @@ vimp.nmap({'silent'}, '<Leader>je', ':%!jq .<CR>')
 vimp.nmap({'silent'}, '<Leader>jc', ':%!jq -c .<CR>')
 vim.wo.relativenumber = true
 EOF
-
-nnoremap <leader>jt :! jsctags -o tags server test admin<CR>
-
